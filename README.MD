@@ -4,7 +4,7 @@
 
 ![Image text](https://github.com/BetterRaven/yys_cpp/blob/master/image/QQ%E6%88%AA%E5%9B%BE20210708174718.png)
 
-然后以管理员身份运行本程序，输入相应的参数即可，再点击开始即可。<br>
+然后以管理员身份运行本程序，输入相应的参数，再点击开始即可。<br>
 
 其他：<br>
 也可以用于觉醒材料。<br>
