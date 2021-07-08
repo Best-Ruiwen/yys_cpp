@@ -3,6 +3,7 @@
 #include "inc/function.h"
 #include <thread>
 #include <QDebug>
+#include <Windows.h>
 
 yuhun::yuhun(QWidget *parent) :
     QWidget(parent),
@@ -21,15 +22,26 @@ void yuhun::on_pushButton_clicked()
     int time, x, y, times;
     bool ok;
 
-    time = ui->time->text().toInt(&ok);
-    x = ui->xsize->text().toInt(&ok);
-    y = ui->ysize->text().toInt(&ok);
-    times = ui->time->text().toInt(&ok);
-    const bool a = ui->checkBox->isChecked();
-    const bool b = ui->checkBox_2->isChecked();
-    const bool c = ui->checkBox_3->isChecked();
+    HWND lhwnd = FindWindow(NULL, TEXT("阴阳师-网易游戏"));
+    RECT rctA;
+    GetWindowRect(lhwnd, &rctA);
+    qDebug() << rctA.right - rctA.left << ", " << rctA.bottom - rctA.top;
 
-    std::thread game(start_game, time, x, y, times, a, b, c);
+
+    time = ui->time->text().toInt(&ok);
+//    x = ui->xsize->text().toInt(&ok);
+//    y = ui->ysize->text().toInt(&ok);
+    x = rctA.right - rctA.left - 10;
+    y = rctA.bottom - rctA.top - 10;
+    times = ui->times->text().toInt(&ok);
+    const bool isShutdown = ui->checkBox->isChecked();
+
+    std::thread game(start_game, time, x, y, times, isShutdown);
 
     game.detach();
+}
+
+void yuhun::on_checkBox_clicked()
+{
+
 }

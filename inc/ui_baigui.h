@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'baigui.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.1
+** Created by: Qt User Interface Compiler version 5.0.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -51,29 +51,36 @@ public:
         label_4 = new QLabel(baigui);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(10, 80, 81, 21));
-        label_4->setStyleSheet(QStringLiteral("font: 12pt \"Adobe Devanagari\";"));
+        label_4->setStyleSheet(QString::fromUtf8("font: 12pt \"\345\215\216\346\226\207\345\256\213\344\275\223\";"));
         checkBox = new QCheckBox(baigui);
         checkBox->setObjectName(QStringLiteral("checkBox"));
         checkBox->setGeometry(QRect(200, 30, 91, 31));
         QFont font;
+        font.setFamily(QString::fromUtf8("\345\215\216\346\226\207\345\256\213\344\275\223"));
         font.setPointSize(12);
+        font.setBold(false);
+        font.setItalic(false);
+        font.setWeight(50);
         checkBox->setFont(font);
+        checkBox->setStyleSheet(QString::fromUtf8("font: 12pt \"\345\215\216\346\226\207\345\256\213\344\275\223\";"));
         times = new QLineEdit(baigui);
         times->setObjectName(QStringLiteral("times"));
         times->setGeometry(QRect(90, 80, 91, 20));
         pushButton = new QPushButton(baigui);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(200, 70, 81, 31));
+        pushButton->setStyleSheet(QString::fromUtf8("font: 10pt \"\345\215\216\346\226\207\345\256\213\344\275\223\";"));
         label = new QLabel(baigui);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(10, 30, 81, 21));
-        label->setStyleSheet(QStringLiteral("font: 12pt \"Adobe Devanagari\";"));
+        label->setStyleSheet(QString::fromUtf8("font: 12pt \"\345\215\216\346\226\207\345\256\213\344\275\223\";"));
         xsize = new QLineEdit(baigui);
         xsize->setObjectName(QStringLiteral("xsize"));
         xsize->setGeometry(QRect(90, 30, 31, 21));
         label_3 = new QLabel(baigui);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(220, 160, 91, 20));
+        label_3->setStyleSheet(QString::fromUtf8("font: 9pt \"\345\215\216\346\226\207\345\256\213\344\275\223\";"));
 
         retranslateUi(baigui);
 

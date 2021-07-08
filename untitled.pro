@@ -40,3 +40,5 @@ SOURCES += \
     src/mainwindow.cpp \
     src/random.cpp \
     src/yuhun.cpp
+
+UI_DIR = ./inc/

@@ -124,19 +124,20 @@ void move_cur_line(int terminal_x, int terminal_y){
 #endif
 }
 
-void start_game(int t , int x, int y, int total_times, bool shutdown, bool chounv, bool huntu){ //参数0是关机， 参数1是丑女，参数2是魂土
+//void start_game(int t , int x, int y, int total_times, bool shutdown, bool chounv, bool huntu){ //参数0是关机， 参数1是丑女，参数2是魂土
+void start_game(int t, int x, int y, int total_times, bool shutdown){
     sleep(5);
     //qDebug() << shutdown << ", " << total_times;
     //qDebug() << params[0] << params[1] << params[2];
     srand(time(NULL));
-    int x_temp = (int) (x*0.70);
-    int y_temp = (int) (y*0.70);
+    int x_temp = (int) (x*0.87);
+    int y_temp = (int) (y*0.80);
     int x_init, y_init;
     int times = 0;
 
     while (times < total_times){
         x_init = randint(x_temp, x_temp + (int) (x*0.08));
-        y_init = randint(y_temp, y_temp + (int) (y*0.048));
+        y_init = randint(y_temp, y_temp + (int) (y*0.15));
         //move_cur_line(x_init, y_init);
         int count_init = 0, ix, iy;
         get_cur_pos(&ix, &iy);
@@ -152,45 +153,45 @@ void start_game(int t , int x, int y, int total_times, bool shutdown, bool choun
         click_left();
         Sleep(randint(200, 300));
 
-        if (chounv){
-            move_cur_line((int)(x/2), (int)(y*0.3));
-            sleep(3);
-            click_left();
-            sleep(10);
+//        if (chounv){
+//            move_cur_line((int)(x/2), (int)(y*0.3));
+//            sleep(3);
+//            click_left();
+//            sleep(10);
 
-            //第二层
-            click_left();
-            for(int j=0;j<5;j++){
-                Sleep(randint(100,120));
-                click_left();
-            }
-            if (huntu) sleep(12);
-            else sleep(9);
-            //第三层
-            click_left();
-            for(int j=0;j<5;j++){
-                Sleep(randint(100,120));
-                click_left();
-            }
-            move_cur_line(x_init, y_init);
-            if (huntu) sleep(22);
-            else sleep(13);
-        }
-        else{
+//            //第二层
+//            click_left();
+//            for(int j=0;j<5;j++){
+//                Sleep(randint(100,120));
+//                click_left();
+//            }
+//            if (huntu) sleep(12);
+//            else sleep(9);
+//            //第三层
+//            click_left();
+//            for(int j=0;j<5;j++){
+//                Sleep(randint(100,120));
+//                click_left();
+//            }
+//            move_cur_line(x_init, y_init);
+//            if (huntu) sleep(22);
+//            else sleep(13);
+//        }
+//        else{
             //将鼠标移动到随机位置
-            move_cur_random_line();
+        move_cur_random_line();
 
-            //将鼠标移动回初始位置
-            //qDebug() << x_init << y_init;
-            move_cur_line(x_init, y_init);
+        //将鼠标移动回初始位置
+        //qDebug() << x_init << y_init;
+        move_cur_line(x_init, y_init);
 
-            click_left();
+        click_left();
 
-            if (t == 1)
-                sleep(uniform(9, 10));
-            else
-                Sleep(1000*uniform(t+4, t+6));
-        }
+        if (t == 1)  //t是一把用的时间
+            sleep(uniform(9, 10));
+        else
+            Sleep(1000*uniform(t+4, t+6));
+//        }
         click_left();
         Sleep(randint(2200, 2500));
         click_left();
@@ -209,12 +210,12 @@ void start_game(int t , int x, int y, int total_times, bool shutdown, bool choun
 
 void start_baigui(int x, int y, bool shutdown, int total_times){
     sleep(5);
-    int x_temp = (int) (x*0.7);
-    int y_temp = (int) (y*0.73);
+    int x_temp = (int) (x*0.83);
+    int y_temp = (int) (y*0.8);
     int times = 0, x1, y1;
     while(times <= total_times){
-        int x_init = randint(x_temp, x_temp + (int)(x * 0.08));
-        int y_init = randint(y_temp, y_temp + (int)(y * 0.048));
+        int x_init = randint(x_temp, x_temp + (int)(x * 0.06));
+        int y_init = randint(y_temp, y_temp + (int)(y * 0.11));
         int count_init = 0, ix, iy;
 
         get_cur_pos(&ix, &iy);
