@@ -25,7 +25,7 @@ void yuhun::on_pushButton_clicked()
     HWND lhwnd = FindWindow(NULL, TEXT("阴阳师-网易游戏"));
     RECT rctA;
     GetWindowRect(lhwnd, &rctA);
-    qDebug() << rctA.right - rctA.left << ", " << rctA.bottom - rctA.top;
+//    qDebug() << rctA.right - rctA.left << ", " << rctA.bottom - rctA.top;
 
 
     time = ui->time->text().toInt(&ok);
